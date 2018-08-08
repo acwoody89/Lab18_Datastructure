@@ -10,6 +10,10 @@ public interface MyList {
 	
 	void removeFromEnd();
 	
+	boolean removeAt(int index);
+	
+	boolean insertAt(int index, String s);
+	
 	String get(int index); 
 	
 	int size(); // how many items are in the list

@@ -92,6 +92,41 @@ public class MyArrayList implements MyList {
 		
 		return length;
 	}
+	
+
+	
+	public boolean insertAt(int index, String s) {
+		boolean check = false;
+		if(isFull()) {
+			doubleLength();
+		}
+		
+		if(index >= 0 && index <= length) {
+
+			for(int i = length; i > index; i--) {
+					array[i] = array[i -1];
+					check = true;
+					
+			}
+			array[index] = s;
+			length++;
+		}
+		return check;
+	}
+
+	public boolean removeAt(int index) {
+		boolean check = false;
+		if(index >= 0 && index < length) {
+			for(int i = index; i < length - 1; i++) {
+					array[i] = array[i - 1];
+					check = true;
+					
+			}
+			length--;
+		}
+		return check;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder("[ ");
